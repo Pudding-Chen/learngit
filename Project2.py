@@ -35,13 +35,13 @@ ys=[]
 ti={}
 t1=()
 ran={}
-t1 = '2020-01-03'
-t2 = '2020-06-30'
-n1 = 'rb2010'
-n2 = 'rb2101'
 def connectPSQL():
     conn=psycopg2.connect(database=DB_NAME, user=DB_USERNAME , password=DB_PASSWORD, host=DB_HOST , port=DB_PORT)
     print('connect successful')
+    t1 = '2020-01-03'
+    t2 = '2020-06-30'
+    n1 = 'rb2010'
+    n2 = 'rb2101'
     cur = conn.cursor()
     cur.execute('''
           SELECT InstrumentID,updatetime,bidprice1,askprice1 FROM company1
