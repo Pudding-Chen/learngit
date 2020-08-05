@@ -33,14 +33,15 @@ date = ['2020-01-02', '2020-01-03', '2020-01-06', '2020-01-07', '2020-01-08', '2
 ti={}
 t1=()
 ran={}
-t1 = '2020-01-03'
-t2 = '2020-06-30'
-n = 'cu____'  # 期货'XX____' 期权看涨'XX____C%' 看跌'XX____P%'
+
 def connectPSQL():
     conn=psycopg2.connect(database=DB_NAME, user=DB_USERNAME , password=DB_PASSWORD, host=DB_HOST , port=DB_PORT)
     print('connect successful')
     cur = conn.cursor()
     time1=[]
+    t1 = '2020-01-03'
+    t2 = '2020-06-30'
+    n = 'cu____'  # 期货'XX____' 期权看涨'XX____C%' 看跌'XX____P%'
     for timelist in date:
         if int(timelist.replace('-',''))>=int(t1.replace('-','')) and int(timelist.replace('-', '')) <= int(t2.replace('-', '')) :
             time1.append(timelist)
